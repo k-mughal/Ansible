@@ -1,18 +1,18 @@
 # ANSIBLE INTRODUCTION
-## History of Automatinon
+## History of Automation
 ### Perspective
 - Bash Scripting / Batch Scripting
-- Paython / Perl / Ruby
+- Python / Perl / Ruby
 - Puppet
 - Ansible
 
 ## Use Cases
 - Automation (Any System Automation)
-- Change Management (Producton Server changes)
+- Change Management (Production Server changes)
 - Provisioning (Setup Servers from scratch/ Cloud provisioning)
-- Orchestration (Large scale automation framwork)
+- Orchestration (Large scale automation framework)
   
-## Asnible is Smiple
+## Ansible is Simple
 - No Agents
   - Target machines/Services are accessed by SSH(linux), winrm(windows) & API
 - No Database
