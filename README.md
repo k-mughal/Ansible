@@ -144,6 +144,13 @@ Here's an example of using the apt module to install a package on a Debian-based
     - The task is run on hosts from the "web_servers" group.
     - Privilege escalation (become: yes) is used because installing packages typically requires administrator permissions.
     - The apt module is used to install the "apache2" package. The state parameter is set to "present," indicating that the package should be installed if it is not already.
+ 
+      
+ 
+ <p align="center">
+  <img src="https://github.com/k-mughal/Ansible/assets/18217530/db43d158-01e4-4b50-8e2d-162e6843dd51">
+</p>
+
 
 
 
