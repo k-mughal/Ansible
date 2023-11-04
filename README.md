@@ -110,16 +110,16 @@ all:  # This is a group that includes all hosts
         state: restarted
 
 ```
-- ##### The playbook is named "Example Playbook.
-- ##### It targets hosts from the "web_servers" group in the inventory.
-- ##### It includes three tasks:
+- The playbook is named "Example Playbook.
+- It targets hosts from the "web_servers" group in the inventory.
+- It includes three tasks:
     - Installing the Apache package on Debian-based systems (e.g., Ubuntu).
     - Installing the Nginx package on Red Hat-based systems (e.g., CentOS).
     - Creating a sample HTML file on the remote hosts.
-- ##### Privilege escalation (become: yes) is required for tasks that need administrator permissions, like package installation.
-- ##### Conditional statements (when) are used to execute tasks only on specific host types (Debian or Red Hat).
-- ##### A handler named "Restart Apache Service" is defined, which can be triggered by tasks using the notify keyword. This handler restarts the Apache service when needed.
-- ##### To run this playbook, you can use the ansible-playbook command:
+- Privilege escalation (become: yes) is required for tasks that need administrator permissions, like package installation.
+- Conditional statements (when) are used to execute tasks only on specific host types (Debian or Red Hat).
+- A handler named "Restart Apache Service" is defined, which can be triggered by tasks using the notify keyword. This handler restarts the Apache service when needed.
+- To run this playbook, you can use the ansible-playbook command:
 ```
 ansible-playbook -i inventory.yml your_playbook.yml
 ```
@@ -140,7 +140,7 @@ Here's an example of using the apt module to install a package on a Debian-based
         state: present
 
 ```
-- #### In this example:
+- In this example:
     - The name field specifies the name of the task.
     - The task is run on hosts from the "web_servers" group.
     - Privilege escalation (become: yes) is used because installing packages typically requires administrator permissions.
