@@ -31,3 +31,6 @@
   - Shell Commands (e.g windows powershell commands)
   - Scripts
 ## Ansible Connections
+<p align="center">
+  <img src="https://github.com/k-mughal/Ansible/assets/18217530/8ac061a5-9f19-409b-84ea-aa7254fefc43">
+</p>
