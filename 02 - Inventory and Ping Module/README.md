@@ -57,5 +57,6 @@ ansible web01 -m ping -i inventory
 - If we take a look at the error message: It indicates a failure in connecting to the host via SSH. The error message specifically mentions "Key verification failed." Since it's unable to verify the target machine without user input, we'll utilize Ansible configuration to instruct Ansible to bypass host key checks and simply proceed to accept the connection without any further confirmation.
     
 -  To set it to "yes" as the default behavior. We must generate an Ansible configuration file. We can find the configuration file at /etc/ansible/ansible.cfg, although its content is quite minimal. To automate the process, we will follow the steps below.
+-  next steps to follow
   
 
