@@ -44,7 +44,7 @@ ansible web02 -m ping -i inventory
 ansible db01 -m ping -i inventory
 ```
 <p align="center">
-  <img src="https://github.com/k-mughal/Ansible/assets/18217530/9c1a82bb-dbd2-4f33-aa8b-872833e3e31a">
+  <img src="https://github.com/k-mughal/Ansible/assets/18217530/2feb9986-164a-4aa2-a8dd-ea83b3623c5c">
 </p>
 
 - Connecting individually to each host server is not practical, especially when dealing with a large number of hosts. Ansible offers solutions to address this challenge.
@@ -86,7 +86,7 @@ all:
 ```
 - [webservers] and [dbservers] are groups that contain specific host entries with their IP addresses.
 - [prod_servers:children] is a special group that includes the child groups [web_servers] and [dbservers] This is a way to create a higher-level grouping for all the servers in a production environment.
-- Now we can run the following command below to target specific group of server servers
+- Now we can run the following command below to target a specific group of server servers.
 
 ```
 ansible webservers -m ping -i inventory
@@ -97,4 +97,10 @@ ansible prod_servers all ping -i inventory (ssh/ping all host)
 ansible prod_servers '*' ping -i inventory (ssh/ping all host)
 
 ```
+
+<p align="center">
+  <img src="https://github.com/k-mughal/Ansible/assets/18217530/511a0040-0227-4e29-a701-713998234592">
+</p>
+
+
 
