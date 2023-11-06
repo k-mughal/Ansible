@@ -103,4 +103,48 @@ ansible prod_servers '*' ping -i inventory (ssh/ping all host)
 </p>
 
 
+- Earlier, we set variables at the host level, like `ansible_host`, which have the highest priority and groups have lower level priority. However, it's also possible to define variables at the group level. For instance, if we have common user and private key settings for all host servers, we can define these variables at the `prod_servers` group level.
+- To further grasp the concept of variables, let's explore another example. Execute the following commands to create an additional folder by copying 'exercise2' to 'exercise3'. Run the following commands in Git Bash terminal of the control server.
 
+
+```
+cd ~
+cd ansible-prjs/
+cp -r exercise2 exercise3
+cd exercise3/
+ls
+vim inventory
+
+all:
+  hosts:
+    web01:
+      ansible_host: 172.31.45.71
+    web02:
+      ansible_host: 172.31.46.137
+    db01:
+      ansible_host: 172.31.32.105
+
+  children:
+    webservers:
+      hosts:
+        web01:
+        web02:
+    dbservers:
+      hosts:
+        db01:
+    prod_servers:
+      children:
+         webservers:
+         dbservers:
+      vars:
+         ansible_user: ec2-user
+         ansible_ssh_private_key_file: client-key.pem
+
+:wq
+```
+- Execute the command to verify if creating a variable at the children level has been successful.
+  
+  ```
+  ansible all -m ping -i inventory
+  
+  ```
