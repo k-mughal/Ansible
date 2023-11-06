@@ -148,3 +148,6 @@ all:
   ansible all -m ping -i inventory
   
   ```
+  <p align="center">
+  <img src="https://github.com/k-mughal/Ansible/assets/18217530/60f22db0-0d4b-42bf-bc27-246be8baa38e">
+</p>
