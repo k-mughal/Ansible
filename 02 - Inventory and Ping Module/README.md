@@ -1,12 +1,12 @@
 ## Inventory & Ping Module
-We have a control machine running the Ubuntu operating system Next, we have three machines: host-web01, host-web02, and host-DB01, all of them running CentOS 9. Our first task is to establish a connection between the control machine and its target machines (host-web01, host-web02, and host-DB01). The control machine needs to connect to these target machines, and we know that Ansible uses SSH to connect to them. To SSH into these EC2 instances, we use the command 'ssh -i [key path] [username]@[IP address]. We need to provide the same information to Ansible so that it can SSH into the target machines
+We have a control server running the Ubuntu operating system Next, we have three machines: host-web01, host-web02, and host-DB01, all of them running CentOS 9. Our first task is to establish a connection between the control machine and its target machines (host-web01, host-web02, and host-DB01). The control machine needs to connect to these target machines, and we know that Ansible uses SSH to connect to them. To SSH into these EC2 instances, we use the command 'ssh -i [key path] [username]@[IP address]. We need to provide the same information to Ansible so that it can SSH into the target machines
 
 >[!Note]
-> Always have inventory in your repository so then you can fetch it on any machine and you can run Ansible playbooks basically. The default location for this file is /etc/ansible/hosts. You can specify a different inventory file at the command line using the -i <path> option or in the configuration using inventory.
+> Always have inventory in your repository so then you can fetch it on any machine and you can run Ansible playbooks. The default location for this file is /etc/ansible/hosts. You can specify a different inventory file at the command line using the -i <path> option or in the configuration using inventory.
 
 
 ## <a href="https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html" target="_blank"> How to Build Inventory </a>
-- Run the following commands in Git Bash terminal of the host server. _Note: ansible_host: private IP of host-web01 (aws)_
+- Run the following commands in Git Bash terminal of the control server. _Note: ansible_host: private IP of host-web01 (aws)_
 
 ```
 mkir ansible-prjs
