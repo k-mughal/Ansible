@@ -43,6 +43,10 @@ ansible webservers -m ansible.builtin.yum -a "name=httpd state=present" -i inven
   <img src="https://github.com/k-mughal/Ansible/assets/18217530/4f849c30-68f5-44d0-bb72-0ecc7420f313">
 </p>
 
+- Let's engage in another exercise where we create an index file, push it to the host servers, and then make some changes in index file to observe how the Ansible configuration system detects these changes and takes appropriate actions.
+- 
+
+
 
 
 
