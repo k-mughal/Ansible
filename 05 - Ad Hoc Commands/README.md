@@ -44,10 +44,38 @@ ansible webservers -m ansible.builtin.yum -a "name=httpd state=present" -i inven
 </p>
 
 - Let's engage in another exercise where we create an index file, push it to the host servers, and then make some changes in index file to observe how the Ansible configuration system detects these changes and takes appropriate actions.
-- 
 
+```
+vim index.html
+This website is managed by Ansible
 
+:wq
 
+ansible webservers -m ansible.builtin.copy -a "src=index.html dest=/var/www/html/index.html" -i inventory --become
+
+```
+<p align="center">
+  <img src="https://github.com/k-mughal/Ansible/assets/18217530/7b0331df-394f-49a5-961f-430aff24ab2f">
+</p>
+
+- If we re-run this command, the output will display a "changed" status as false. However, if we make any modifications to the index file in the source or destination, the Ansible configuration system will detect the change and re-apply the change.
+
+```
+vim index.html
+This website is managed by Ansible (edited)
+
+:wq
+
+ansible webservers -m ansible.builtin.copy -a "src=index.html dest=/var/www/html/index.html" -i inventory --become
+
+```
+- We can also test the index.html web page by pasting the IP address of the web host into your browser by making the below changes in the Security Group
+<p align="center">
+  <img src="https://github.com/k-mughal/Ansible/assets/18217530/cb963458-d93c-470c-ae04-5ec1edfc7728">
+</p>
+
+  
+  
 
 
 
