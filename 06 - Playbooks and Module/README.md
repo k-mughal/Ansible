@@ -87,10 +87,11 @@ ansible webservers -m yum -a "name=httpd state=absent" -i inventory --become
 ansible-playbook -i inventory web-db-playbook.yaml
 
 ```
-OUTPUT PICTURE
+<p align="center">
+  <img src="https://github.com/k-mughal/Ansible/assets/18217530/db3aca4f-f01f-4bd1-b277-3b67e5797e74">
+</p>
 
 - For debugging purposes, we can pass -v, -vv, or -vvv to analyze the output.
-- 
 
 ```
 ansible-playbook -i inventory web-db-playbook.yaml -v
