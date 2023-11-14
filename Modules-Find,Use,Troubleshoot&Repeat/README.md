@@ -64,7 +64,7 @@
   <img src="https://github.com/k-mughal/Ansible/assets/18217530/221db02e-1720-4955-9c56-7b25bff4dc9b">
 </p>
 
-- In this segment, we will establish a database named "account" and include a user named "premiumUser." To accomplish this, locate the appropriate module in the documentation's  <a href="https://docs.ansible.com/ansible/2.8/modules/list_of_files_modules.html" target="_blank">Module Index.</a> Navigate to the <a href="https://docs.ansible.com/ansible/2.8/modules/list_of_files_modules.html" target="_blank"> Database modules</a>, specifically the MySQL section where you can find the module "mysql_db – Add or remove MySQL databases from a remote host". Once there, proceed to the <a href=" https://docs.ansible.com/ansible/2.8/modules/mysql_db_module.html#mysql-db-module" target="_blank"> Examples </a> section and replicate the initial code block.
+- In this segment, we will establish a database named "account" and include a user named "premiumUser." To accomplish this, locate the appropriate module in the documentation's  <a href="https://docs.ansible.com/ansible/2.8/modules/list_of_files_modules.html" target="_blank" rel="noopener noreferrer">Module Index.</a> Navigate to the <a href="https://docs.ansible.com/ansible/2.8/modules/list_of_files_modules.html" target="_blank" rel="noopener noreferrer"> Database modules</a>, specifically the MySQL section where you can find the module "mysql_db – Add or remove MySQL databases from a remote host". Once there, proceed to the <a href=" https://docs.ansible.com/ansible/2.8/modules/mysql_db_module.html#mysql-db-module" target="_blank" rel="noopener noreferrer"> Examples </a> section and replicate the initial code block.
   
   <p align="center">
   <img src="https://github.com/k-mughal/Ansible/assets/18217530/cbae487e-16ab-4d52-8baa-f72adb854ad4">
@@ -170,7 +170,7 @@ ansible-playbook -i inventory db.yaml
 
 - The potential solution suggests the requirement for a socket file that facilitates the connection between two processes.
 
-- Another troubleshooting approach is to visit the <a href="https://docs.ansible.com/ansible/latest/collections/community/mysql/index.html" target="_blank"> MySQL Ansible modules </a> community page, maintained by the Ansible community. Navigate to the "Modules" section and access the <a href="https://docs.ansible.com/ansible/latest/collections/community/mysql/mysql_db_module.html#ansible-collections-community-mysql-mysql-db-module" target="_blank">"mysql_db module."  </a> Examine the Examples and consult the Notes section for commonly encountered errors. 
+- Another troubleshooting approach is to visit the <a href="https://docs.ansible.com/ansible/latest/collections/community/mysql/index.html" target="_blank" rel="noopener noreferrer"> MySQL Ansible modules </a> community page, maintained by the Ansible community. Navigate to the "Modules" section and access the <a href="https://docs.ansible.com/ansible/latest/collections/community/mysql/mysql_db_module.html#ansible-collections-community-mysql-mysql-db-module" target="_blank" rel="noopener noreferrer">"mysql_db module."  </a> Examine the Examples and consult the Notes section for commonly encountered errors. 
   
   -  Install the module on the control server
  
