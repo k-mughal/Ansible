@@ -50,6 +50,7 @@
  :wq
  
  ansible-playbook -i inventory web-playbook.yaml
+
  ```
   <p align="center">
   <img src="https://github.com/k-mughal/Ansible/assets/18217530/67be4ad0-7c4a-4c80-84eb-6230bc4e83eb">
@@ -57,9 +58,11 @@
 
 - We can verify whether the index.html file has been successfully copied to the destination folder on the host server and confirm the creation of the backup file.
 - Login to host server through Git Bash and follow the steps below.
+  
   <p align="center">
   <img src="https://github.com/k-mughal/Ansible/assets/18217530/221db02e-1720-4955-9c56-7b25bff4dc9b">
 </p>
+
 - In this segment, we will establish a database named "account" and include a user named "premiumUser." To accomplish this, locate the appropriate module in the documentation's  <a href="https://docs.ansible.com/ansible/2.8/modules/list_of_files_modules.html" target="_blank">Module Index.</a> Navigate to the <a href="https://docs.ansible.com/ansible/2.8/modules/list_of_files_modules.html" target="_blank"> Database modules</a>, specifically the MySQL section where you can find the module "mysql_db – Add or remove MySQL databases from a remote host". Once there, proceed to the <a href=" https://docs.ansible.com/ansible/2.8/modules/mysql_db_module.html#mysql-db-module" target="_blank"> Examples </a> section and replicate the initial code block.
   
   <p align="center">
@@ -120,7 +123,7 @@
   <img src="https://github.com/k-mughal/Ansible/assets/18217530/6b0e3786-3679-4cb4-a6f1-ccb371176be8">
 </p>
   
-  -Once the package name is identified, exit from the db server, login into control server and implement the following modifications below in db.yaml playbook.
+- Once the package name is identified, exit from the db server, login into control server and implement the following modifications below in db.yaml playbook.
 
 ```
 vim db.yaml
@@ -152,7 +155,7 @@ vim db.yaml
 
 :wq
 
-exercise7$ ansible-playbook -i inventory db.yaml
+ansible-playbook -i inventory db.yaml
 
 ```
 - Now, a new error arises indicating that Ansible is unable to establish a connection. To address this issue, we can conduct an online search to explore potential solutions and troubleshoot the problem.
@@ -168,22 +171,21 @@ exercise7$ ansible-playbook -i inventory db.yaml
 
 - The potential solution suggests the requirement for a socket file that facilitates the connection between two processes.
 
-- Another troubleshooting approach is to visit the <a href=" https://docs.ansible.com/ansible/2.8/modules/mysql_db_module.html#mysql-db-module" target="_blank"> MySQL Ansible community page, </a>
- maintained by the Ansible community. Navigate to the "Modules" section and access the
-  <a href="https://docs.ansible.com/ansible/latest/collections/community/mysql/mysql_db_module.html#ansible-collections-community-mysql-mysql-db-module" target="_blank">"mysql_db module."  </a> Examine the Examples and consult the Notes section for commonly encountered errors. 
+- Another troubleshooting approach is to visit the <a href=" https://docs.ansible.com/ansible/2.8/modules/mysql_db_module.html#mysql-db-module" target="_blank"> MySQL Ansible community page, </a> maintained by the Ansible community. Navigate to the "Modules" section and access the <a href="https://docs.ansible.com/ansible/latest/collections/community/mysql/mysql_db_module.html#ansible-collections-community-mysql-mysql-db-module" target="_blank">"mysql_db module."  </a> Examine the Examples and consult the Notes section for commonly encountered errors. 
+  
   -  Install the module on the control server
-  <p align="center">
-
-```
+ 
+ ```
   ansible-galaxy collection install community.mysql
 ```
+ <p align="center">
 <img src="https://github.com/k-mughal/Ansible/assets/18217530/aaf1bd53-0718-493d-a0e6-e697c0540630">
 </p>
 
 
-  
-
+ 
 - Make adjustments to the db.yaml playbook.
+  
 
 ```
 ---
@@ -214,6 +216,7 @@ exercise7$ ansible-playbook -i inventory db.yaml
         login_unix_socket: /var/lib/mysql/mysql.sock
 
 ```
+
 <img src="https://github.com/k-mughal/Ansible/assets/18217530/75d67e8d-282c-4f90-ae15-ddd8b8ef0279">
 </p>
 
