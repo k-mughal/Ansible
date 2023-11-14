@@ -1,7 +1,8 @@
-- For this task, we'll employ the copy module. Please navigate to the 
+- In this exercise, we will learn the process of discovering a module, utilizing it, and resolving any issues that may arise. This routine is typical for a DevOps engineer's daily responsibilities. The primary task will involve writing playbooks, each comprising various tasks. You must identify suitable modules for each task, apply them, and troubleshoot in case of any failures. This mirrors the standard workflow for a DevOps engineer.
+- For this exercise, we'll employ the copy module. Please navigate to the 
   <a href="https://docs.ansible.com/ansible/2.8/modules/modules_by_category.html" target="_blank">Module Index </a>
  and select the  <a href="https://docs.ansible.com/ansible/2.8/modules/list_of_files_modules.html" target="_blank"> Files module. </a>
- - During this exercise, we'll undertake two tasks. Initially, we'll transfer the files from the control server to the host server. Subsequently, we'll add a database and create database users. To achieve this, we will utilize copy module to transfer files to a remote location. So in the **File modules** click on " copy – Copy files to remote locations " and  scroll down to **Examples** then copy the first block of code.
+ - We'll undertake two tasks. Initially, we'll transfer the files from the control server to the host server. Subsequently, we'll add a database and create database users. To achieve this, we will utilize copy module to transfer files to a remote location. So in the **File modules** click on " copy – Copy files to remote locations " and  scroll down to **Examples** then copy the first block of code.
 
  <p align="center">
   <img src="https://github.com/k-mughal/Ansible/assets/18217530/620fa17c-2469-4b5b-9d6c-b12169c43cbb">
@@ -161,17 +162,15 @@ ansible-playbook -i inventory db.yaml
 - Now, a new error arises indicating that Ansible is unable to establish a connection. To address this issue, we can conduct an online search to explore potential solutions and troubleshoot the problem.
 
 <p align="center">
-  <img src="https://github.com/k-mughal/Ansible/assets/18217530/c3c24c6b-1b71-407f-8395-f76fdd81303d
-">
+  <img src="https://github.com/k-mughal/Ansible/assets/18217530/c3c24c6b-1b71-407f-8395-f76fdd81303d">
 </p>
 <p align="center">
-  <img src="https://github.com/k-mughal/Ansible/assets/18217530/183b61f9-44f2-4f25-b1d5-cedb6f840a1e
-">
+  <img src="https://github.com/k-mughal/Ansible/assets/18217530/183b61f9-44f2-4f25-b1d5-cedb6f840a1e">
 </p>
 
 - The potential solution suggests the requirement for a socket file that facilitates the connection between two processes.
 
-- Another troubleshooting approach is to visit the <a href=" https://docs.ansible.com/ansible/2.8/modules/mysql_db_module.html#mysql-db-module" target="_blank"> MySQL Ansible community page, </a> maintained by the Ansible community. Navigate to the "Modules" section and access the <a href="https://docs.ansible.com/ansible/latest/collections/community/mysql/mysql_db_module.html#ansible-collections-community-mysql-mysql-db-module" target="_blank">"mysql_db module."  </a> Examine the Examples and consult the Notes section for commonly encountered errors. 
+- Another troubleshooting approach is to visit the <a href="https://docs.ansible.com/ansible/latest/collections/community/mysql/index.html" target="_blank"> MySQL Ansible modules </a> community page, maintained by the Ansible community. Navigate to the "Modules" section and access the <a href="https://docs.ansible.com/ansible/latest/collections/community/mysql/mysql_db_module.html#ansible-collections-community-mysql-mysql-db-module" target="_blank">"mysql_db module."  </a> Examine the Examples and consult the Notes section for commonly encountered errors. 
   
   -  Install the module on the control server
  
@@ -216,9 +215,64 @@ ansible-playbook -i inventory db.yaml
         login_unix_socket: /var/lib/mysql/mysql.sock
 
 ```
-
+ <p align="center">
 <img src="https://github.com/k-mughal/Ansible/assets/18217530/75d67e8d-282c-4f90-ae15-ddd8b8ef0279">
 </p>
+- Additionally, we need to create a database user. To do this, refer to the  <a href="https://docs.ansible.com/ansible/latest/collections/community/mysql/mysql_user_module.html#ansible-collections-community-mysql-mysql-user-module" target="_blank">"mysql_user module"  </a> in the <a href="https://docs.ansible.com/ansible/latest/collections/community/mysql/index.html" target="_blank">"Modules"  </a> section. At the top of this page, it is indicates that the community.mysql module must be installed, which has already been done. Scroll down to the example section and replicate the third code block.
+   <p align="center">
+<img src="https://github.com/k-mughal/Ansible/assets/18217530/b22f64a3-b147-4b37-87e5-5a6323b64c3e">
+</p>
+
+- Modify the db.yaml playbook accordingly and execute it. You may encounter an "access denied" error, in this case, include the socket file path to address this issue.
+  
+```
+vim db.yaml
+---
+- name: DBserver Setup
+  hosts: dbservers
+  become: yes
+  tasks:
+    - name: Install mariadb-server
+      ansible.builtin.yum:
+        name: mariadb-server
+        state: present
+
+    - name: install pymysql
+      ansible.builtin.yum:
+        name: python3-PyMySQL
+        state: present
+
+    - name: Start mariadb service
+      ansible.builtin.service:
+        name: mariadb
+        state: started
+        enabled: yes
+
+    - name: Create a new database with name 'accounts'
+      community.mysql.mysql_db:
+        name: accounts
+        state: present
+        login_unix_socket: /var/lib/mysql/mysql.sock
+
+    - name: Create database user with name 'premiumUser'
+      community.mysql.mysql_user:
+        name: premiumUser
+        password: admin123
+        priv: '*.*:ALL'
+        state: present
+        login_unix_socket: /var/lib/mysql/mysql.sock
+
+
+:wq
+
+ansible-playbook -i inventory db.yaml
+
+```
+
+   <p align="center">
+<img src="https://github.com/k-mughal/Ansible/assets/18217530/6c2eea8a-9ba9-4e68-b5ec-7744740116cd">
+</p>
+
 
 
 
