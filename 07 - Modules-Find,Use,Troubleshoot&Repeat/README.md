@@ -273,6 +273,7 @@ ansible-playbook -i inventory db.yaml
 <img src="https://github.com/k-mughal/Ansible/assets/18217530/6c2eea8a-9ba9-4e68-b5ec-7744740116cd">
 </p>
 
+- Upon completion of this exercise, we have acquired proficiency in discovering modules, applying them, troubleshooting potential issues, implementing solutions, and subsequently reutilizing them.
 
 
 
