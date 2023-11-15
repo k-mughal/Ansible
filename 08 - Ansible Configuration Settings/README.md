@@ -64,6 +64,6 @@ ansible-playbook db.yaml -vv
 
 ```
 
->[Note!]:
+>[!Note]
 > Ensure configuration file is always placed in the repository where the playbook is located.
 
