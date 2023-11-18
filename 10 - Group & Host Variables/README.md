@@ -176,6 +176,10 @@ ansible-playbook -e USRNM=cliuser -e COMM=cliuser vars-precedence-playbook.yaml
   <img src="https://github.com/k-mughal/Ansible/assets/18217530/f1a52a36-1a91-4d5f-8a58-e027b0bd1c03">
 </p>
 
->[!Note] It is very uncommon to define variables directly inside the playbook. Typically, the 'all' file is utilized within the group_vars folder, and additional files are employed based on specific requirements, such as host or group-level variable files.
+
+>[!Note]
+> It is very uncommon to define variables directly inside the playbook. Typically, the 'all' file is utilized within the group_vars folder, and additional files are employed based on specific requirements, such as host or group-level variable files. <path>
+
 - Please refer to the Ansible documentation for use of 
  **<a href="https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_variables.html" target="_blank">**simple variables**  </a>**
+
