@@ -91,6 +91,7 @@ vim db.yaml
 ansible-playbook db.yaml
 
 ```
+
 - For debugging purposes, we can incorporate the following task to observe the variable output.
   
 <p align="center">
@@ -99,7 +100,9 @@ ansible-playbook db.yaml
 <p align="center">
   <img src="https://github.com/k-mughal/Ansible/assets/18217530/b4ed56f0-38f5-4c20-85d4-8257ccd6715b">
 </p>
+
 - When a module executes and produces output, it is usually suppressed by default. When we run the playbook, the output is presented in JSON format, and we can capture this output using a variable. "register module" capture the output and using the debug module prints the output. Most this technique is use for troubleshooting purpose only. The method to achieve this is outlined below.
+  
  <p align="center">
   <img src="https://github.com/k-mughal/Ansible/assets/18217530/6a790d44-8a4b-4eb8-9c4c-244f968dc086">
 </p> 

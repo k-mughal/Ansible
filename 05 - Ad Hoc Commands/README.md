@@ -1,5 +1,5 @@
 # Ad Hoc Commands
-- **<a href="https://docs.ansible.com/ansible/latest/command_guide/intro_adhoc.htm" target="_blank">**In Ansible, an ad hoc command**  </a>** is a one-time, single-task command that you can execute directly from the command line without the need to create and run a playbook. Ad hoc commands are useful for performing quick, one-off tasks or for running simple tasks on remote systems managed by Ansible.
+- **<a href="https://docs.ansible.com/ansible/latest/command_guide/intro_adhoc.html" target="_blank">**In Ansible, an ad hoc command**  </a>** is a one-time, single-task command that you can execute directly from the command line without the need to create and run a playbook. Ad hoc commands are useful for performing quick, one-off tasks or for running simple tasks on remote systems managed by Ansible.
 - The basic syntax for an ad hoc command in Ansible is as follows:
   
 ```
