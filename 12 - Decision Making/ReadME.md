@@ -6,10 +6,7 @@
 
 - Throughout this process, our focus will extend to understanding decision-making within the playbook, incorporating loops, utilizing templates for dynamic configurations, implementing handlers, and exploring Ansible rules. While executing these tasks, we will not only acquire new insights but also apply the features we have previously learned.
 
-- It's worth noting that our emphasis isn't solely on the NTP service; rather, we aim to provide a general approach applicable to any service or server provisioning task. Once the playbooks are comprehensive, we will explore the concept of roles and optimal strategies for their utilization. Lets login to host server and execute the commands below and learn the when to use  **<a href="https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_conditionals.html" target="_blank">**conditions**  </a>** in playbook.
-
-
-
+- It's worth noting that our emphasis isn't solely on the NTP service; rather, we aim to provide a general approach applicable to any service or server provisioning task. Once the playbooks are comprehensive, we will explore the concept of roles and optimal strategies for their utilization. Lets login to host server and execute the commands below.
 
 ```
 cd ansible-prjs
@@ -58,3 +55,11 @@ ansible-playbook provisioning.yaml
 <p align="center">
   <img src="https://github.com/k-mughal/Ansible/assets/18217530/7223749d-50eb-4467-8b6b-73fea28093d9">
 </p>
+
+
+
+- Few other conditional examples from   **<a href="https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_conditionals.html" target="_blank">**Ansible documentation.**  </a>** 
+   <p align="center">
+  <img src="https://github.com/k-mughal/Ansible/assets/18217530/283ae815-d843-45ef-b4dc-e306484229de">
+</p>
+
