@@ -1,4 +1,4 @@
-- n Ansible, a loop is a construct that allows you to iterate over a set of values and perform a task or a series of tasks for each item in that set. Loops are commonly used to avoid repetitive code and to apply the same configuration or operation to multiple items.
+- Ansible, a loop is a construct that allows you to iterate over a set of values and perform a task or a series of tasks for each item in that set. Loops are commonly used to avoid repetitive code and to apply the same configuration or operation to multiple items.
 
 - There are different ways to implement loops in Ansible, and the most common one is by using the loop keyword along with the with_items parameter. However, starting from Ansible 2.5, the loop keyword is deprecated, and the recommended way is to use the loop attribute directly. Let start an exercise.
 
@@ -58,4 +58,4 @@ ansible-playbook provisioning.yaml
   <img src="https://github.com/k-mughal/Ansible/assets/18217530/a3fae52b-bfd1-4ed7-9e46-b6091149f273">
 </p>
 
- Few more loops examples from   **<a href="https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_loops.html" target="_blank">**Ansible documentation.**  </a>** 
+- Few more loops examples from   **<a href="https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_loops.html" target="_blank">**Ansible documentation.**  </a>** 
