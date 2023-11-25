@@ -58,3 +58,7 @@ tasks:
 
 sudo apt install tree -y # install tree package to see the folder structure in tree format 
 ```
+
+<p align="center">
+  <img src="https://github.com/k-mughal/Ansible/assets/18217530/3b23d09d-619f-4ad7-887d-d808a8785c83">
+</p>
