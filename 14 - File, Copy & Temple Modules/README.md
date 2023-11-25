@@ -194,7 +194,7 @@ vim provisioning.yaml
 
 - While the copy module straightforwardly takes the file and deposits it in the target location, the template module operates more intelligently. It reads the file, particularly if it involves a Jinja2 template. Now, what exactly is a Jinja2 template? It's quite an extensive concept, but in essence, it revolves around the use of variables.
 
-- In our playbook, we define variables and subsequently utilize them. The structure involves double quotes and curly braces, constituting Jinja2 templating. With Jinja2 templating, you gain the ability to work with variables and incorporate conditions. This means you can design your configuration file based on specific conditions or even loops.
+- In our playbook, we define variables and subsequently utilize them. The structure involves double quotes and curly braces, constituting Jinja2 templating. With Jinja2 templating, we gain the ability to work with variables and incorporate conditions. This means we can design your configuration file based on specific conditions or even loops.
 
 - The template module takes your template file, examines any templating you've implemented, extracts the actual content, and then transfers it to the designated target location. Let's begin with a simple example by defining a variable. we can google any ntp server, for this exercise we will use 
    **<a href="https://docs.ansible.com/ansible/2.8/modules/list_of_files_modules.html" target="_blank">**North American region.**  </a>** 
